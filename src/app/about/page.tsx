@@ -9,9 +9,11 @@ import {
 import {
   Award,
   Clock,
+  DollarSign,
   Globe,
   Heart,
   Shield,
+  ThumbsUp,
   TrendingUp,
   Users,
 } from "lucide-react";
@@ -254,24 +256,39 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mt-24 rounded-lg bg-muted/30 p-8">
+        <div className="mt-24 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/10 to-chart-1/5 p-8 shadow-md">
           <div className="flex items-center gap-4">
-            <TrendingUp className="h-10 w-10 text-primary" />
-            <h2 className="text-2xl font-bold">Our Impact</h2>
+            <div className="rounded-full bg-white/80 p-3 shadow-sm backdrop-blur-sm">
+              <TrendingUp className="h-8 w-8 text-primary" />
+            </div>
+            <h2 className="text-2xl font-bold text-primary">Our Impact</h2>
           </div>
           <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-3">
-            <div className="flex flex-col items-center text-center">
-              <span className="text-4xl font-bold">10,000+</span>
+            <div className="flex flex-col items-center rounded-xl bg-white/60 p-6 text-center shadow-sm backdrop-blur-sm">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary/10">
+                <Users className="h-10 w-10 text-primary" />
+              </div>
+              <span className="mt-4 text-4xl font-bold text-primary">
+                10,000+
+              </span>
               <span className="mt-2 text-muted-foreground">Clients Served</span>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <span className="text-4xl font-bold">$500M+</span>
+            <div className="flex flex-col items-center rounded-xl bg-white/60 p-6 text-center shadow-sm backdrop-blur-sm">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-chart-2/10">
+                <DollarSign className="h-10 w-10 text-chart-2" />
+              </div>
+              <span className="mt-4 text-4xl font-bold text-chart-2">
+                $500M+
+              </span>
               <span className="mt-2 text-muted-foreground">
                 Super Optimized
               </span>
             </div>
-            <div className="flex flex-col items-center text-center">
-              <span className="text-4xl font-bold">98%</span>
+            <div className="flex flex-col items-center rounded-xl bg-white/60 p-6 text-center shadow-sm backdrop-blur-sm">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-chart-1/10">
+                <ThumbsUp className="h-10 w-10 text-chart-1" />
+              </div>
+              <span className="mt-4 text-4xl font-bold text-chart-1">98%</span>
               <span className="mt-2 text-muted-foreground">
                 Client Satisfaction
               </span>
