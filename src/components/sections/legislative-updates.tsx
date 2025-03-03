@@ -52,7 +52,7 @@ export function LegislativeUpdates() {
           <Button variant="outline" asChild>
             <Link href="/updates" className="group">
               View All Updates
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
@@ -64,11 +64,11 @@ export function LegislativeUpdates() {
             <CardHeader>
               <div className="flex justify-between">
                 <Badge variant="outline">{update.category}</Badge>
-                <FileText className="h-5 w-5 text-muted-foreground" />
+                <FileText className="size-5 text-muted-foreground" />
               </div>
               <CardTitle className="mt-2">{update.title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-grow">
+            <CardContent className="grow">
               <CardDescription className="text-base">
                 {update.description}
               </CardDescription>

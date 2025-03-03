@@ -48,7 +48,7 @@ export function InsightsSection() {
           <Button variant="outline" asChild>
             <Link href="/insights" className="group">
               View All Insights
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
@@ -60,7 +60,7 @@ export function InsightsSection() {
             <CardHeader>
               <CardTitle>{insight.title}</CardTitle>
             </CardHeader>
-            <CardContent className="flex-grow">
+            <CardContent className="grow">
               <CardDescription className="text-base">
                 {insight.description}
               </CardDescription>

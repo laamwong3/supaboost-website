@@ -52,7 +52,7 @@ export function ComparisonPreview() {
           <Button asChild>
             <Link href="/comparison" className="group">
               Compare All Funds
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
         </div>
@@ -61,7 +61,7 @@ export function ComparisonPreview() {
       <Card className="mt-12 overflow-hidden">
         <CardHeader className="bg-muted/50">
           <CardTitle className="flex items-center">
-            <BarChart3 className="mr-2 h-5 w-5" />
+            <BarChart3 className="mr-2 size-5" />
             Top Performing Superannuation Funds
           </CardTitle>
         </CardHeader>

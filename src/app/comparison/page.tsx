@@ -131,7 +131,7 @@ export default function ComparisonPage() {
           <Card className="lg:w-1/4">
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Filter className="mr-2 h-5 w-5" />
+                <Filter className="mr-2 size-5" />
                 Filters
               </CardTitle>
               <CardDescription>Refine your comparison</CardDescription>
@@ -140,7 +140,7 @@ export default function ComparisonPage() {
               <div>
                 <label className="text-sm font-medium">Search</label>
                 <div className="relative mt-1">
-                  <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+                  <Search className="absolute left-2 top-2.5 size-4 text-muted-foreground" />
                   <Input className="pl-8" placeholder="Search funds..." />
                 </div>
               </div>
@@ -236,13 +236,13 @@ export default function ComparisonPage() {
               <CardHeader className="flex flex-row items-center justify-between">
                 <div>
                   <CardTitle className="flex items-center">
-                    <BarChart3 className="mr-2 h-5 w-5" />
+                    <BarChart3 className="mr-2 size-5" />
                     Fund Comparison
                   </CardTitle>
                   <CardDescription>Comparing 6 of 30 funds</CardDescription>
                 </div>
                 <Button variant="ghost" size="sm" className="gap-1">
-                  <SlidersHorizontal className="h-4 w-4" />
+                  <SlidersHorizontal className="size-4" />
                   Customize
                 </Button>
               </CardHeader>
@@ -285,7 +285,7 @@ export default function ComparisonPage() {
                       </Table>
                     </div>
                     <div className="mt-4 flex items-start gap-2 text-xs text-muted-foreground">
-                      <Info className="h-4 w-4 flex-shrink-0" />
+                      <Info className="size-4 shrink-0" />
                       <p>
                         Past performance is not a reliable indicator of future
                         performance. All returns are calculated after fees and
@@ -324,7 +324,7 @@ export default function ComparisonPage() {
                       </Table>
                     </div>
                     <div className="mt-4 flex items-start gap-2 text-xs text-muted-foreground">
-                      <Info className="h-4 w-4 flex-shrink-0" />
+                      <Info className="size-4 shrink-0" />
                       <p>
                         Fees are based on the balanced investment option and may
                         vary depending on your chosen investment options.
@@ -418,7 +418,7 @@ export default function ComparisonPage() {
                       </Table>
                     </div>
                     <div className="mt-4 flex items-start gap-2 text-xs text-muted-foreground">
-                      <Info className="h-4 w-4 flex-shrink-0" />
+                      <Info className="size-4 shrink-0" />
                       <p>
                         Ratings are based on SuperBoost&apos;s analysis
                         methodology and are updated quarterly.

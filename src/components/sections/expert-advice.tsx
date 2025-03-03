@@ -55,12 +55,12 @@ export function ExpertAdvice() {
           <Button asChild>
             <Link href="/advice" className="group">
               Book a Consultation
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
           <Button variant="outline" asChild>
             <Link href="/calculator" className="group">
-              <Calculator className="mr-2 h-4 w-4" />
+              <Calculator className="mr-2 size-4" />
               Retirement Calculator
             </Link>
           </Button>
@@ -72,7 +72,7 @@ export function ExpertAdvice() {
           <Card key={index} className="flex flex-col">
             <CardHeader className="pb-4">
               <div className="flex items-center gap-4">
-                <Avatar className="h-12 w-12">
+                <Avatar className="size-12">
                   <AvatarImage src={expert.imageUrl} alt={expert.name} />
                   <AvatarFallback>{expert.name.charAt(0)}</AvatarFallback>
                 </Avatar>
@@ -84,7 +84,7 @@ export function ExpertAdvice() {
                 </div>
               </div>
             </CardHeader>
-            <CardContent className="flex-grow">
+            <CardContent className="grow">
               <p className="text-sm text-muted-foreground">
                 {expert.description}
               </p>
@@ -105,8 +105,8 @@ export function ExpertAdvice() {
       {/* New Calculator CTA Card */}
       <div className="mt-12 rounded-lg bg-gradient-to-br from-primary/10 to-chart-1/10 p-8 text-center">
         <div className="mx-auto max-w-2xl">
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white/80 shadow-sm">
-            <Calculator className="h-8 w-8 text-primary" />
+          <div className="mx-auto mb-6 flex size-16 items-center justify-center rounded-full bg-white/80 shadow-sm">
+            <Calculator className="size-8 text-primary" />
           </div>
           <h3 className="text-2xl font-bold">Plan Your Retirement</h3>
           <p className="mt-4 text-lg text-muted-foreground">
@@ -123,32 +123,32 @@ export function ExpertAdvice() {
 
       <div className="mt-12 rounded-lg bg-muted/30 p-6 md:p-8">
         <div className="flex items-center gap-4">
-          <Award className="h-10 w-10 text-primary" />
+          <Award className="size-10 text-primary" />
           <h3 className="text-xl font-bold">Why Choose Our Experts?</h3>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="size-5 text-primary" />
             <p className="text-sm">Independent, unbiased advice</p>
           </div>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="size-5 text-primary" />
             <p className="text-sm">Certified financial advisors</p>
           </div>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="size-5 text-primary" />
             <p className="text-sm">Personalized strategies</p>
           </div>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="size-5 text-primary" />
             <p className="text-sm">Ongoing support and guidance</p>
           </div>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="size-5 text-primary" />
             <p className="text-sm">Up-to-date with legislative changes</p>
           </div>
           <div className="flex items-start gap-2">
-            <CheckCircle2 className="h-5 w-5 text-primary" />
+            <CheckCircle2 className="size-5 text-primary" />
             <p className="text-sm">Transparent fee structure</p>
           </div>
         </div>

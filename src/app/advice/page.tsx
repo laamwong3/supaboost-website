@@ -32,7 +32,7 @@ export default function AdvicePage() {
       title: "Superannuation Review",
       description:
         "A comprehensive analysis of your current superannuation arrangements, identifying opportunities for improvement.",
-      icon: <FilePieChart className="h-10 w-10 text-primary" />,
+      icon: <FilePieChart className="size-10 text-primary" />,
       price: "$295",
       features: [
         "Analysis of current fund performance",
@@ -46,7 +46,7 @@ export default function AdvicePage() {
       title: "Retirement Planning",
       description:
         "Tailored retirement planning advice to help you achieve your retirement income goals.",
-      icon: <Heart className="h-10 w-10 text-primary" />,
+      icon: <Heart className="size-10 text-primary" />,
       price: "$495",
       features: [
         "Retirement income projection",
@@ -60,7 +60,7 @@ export default function AdvicePage() {
       title: "SMSF Consultation",
       description:
         "Expert guidance on establishing and managing a Self-Managed Super Fund.",
-      icon: <ShieldCheck className="h-10 w-10 text-primary" />,
+      icon: <ShieldCheck className="size-10 text-primary" />,
       price: "$695",
       features: [
         "SMSF suitability assessment",
@@ -74,7 +74,7 @@ export default function AdvicePage() {
       title: "Superannuation Consolidation",
       description:
         "Simplify your super by combining multiple accounts to reduce fees and improve management.",
-      icon: <DollarSign className="h-10 w-10 text-primary" />,
+      icon: <DollarSign className="size-10 text-primary" />,
       price: "$195",
       features: [
         "Lost super search",
@@ -142,8 +142,8 @@ export default function AdvicePage() {
             </h2>
             <div className="mt-6 space-y-6">
               <div className="flex items-start gap-4">
-                <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <Sparkles className="h-4 w-4" />
+                <div className="mt-1 flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <Sparkles className="size-4" />
                 </div>
                 <div>
                   <h3 className="font-medium">
@@ -158,8 +158,8 @@ export default function AdvicePage() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <FileCheck className="h-4 w-4" />
+                <div className="mt-1 flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <FileCheck className="size-4" />
                 </div>
                 <div>
                   <h3 className="font-medium">Navigate Complex Regulations</h3>
@@ -171,8 +171,8 @@ export default function AdvicePage() {
                 </div>
               </div>
               <div className="flex items-start gap-4">
-                <div className="mt-1 flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <BookOpen className="h-4 w-4" />
+                <div className="mt-1 flex size-8 items-center justify-center rounded-full bg-primary/10 text-primary">
+                  <BookOpen className="size-4" />
                 </div>
                 <div>
                   <h3 className="font-medium">Personalized Strategies</h3>
@@ -187,7 +187,7 @@ export default function AdvicePage() {
           </div>
           <div className="order-first md:order-last">
             <div className="aspect-video overflow-hidden rounded-lg bg-muted">
-              <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 to-chart-2/20 p-8 text-center">
+              <div className="flex size-full items-center justify-center bg-gradient-to-br from-primary/20 to-chart-2/20 p-8 text-center">
                 <div>
                   <h3 className="text-2xl font-bold">Did you know?</h3>
                   <p className="mt-4 text-lg">
@@ -221,7 +221,7 @@ export default function AdvicePage() {
                     {service.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
+                <CardContent className="grow">
                   <div className="mb-4">
                     <span className="text-2xl font-bold">{service.price}</span>
                     <span className="text-muted-foreground"> / session</span>
@@ -229,7 +229,7 @@ export default function AdvicePage() {
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-5 w-5 text-primary" />
+                        <CheckCircle2 className="size-5 text-primary" />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}
@@ -249,7 +249,7 @@ export default function AdvicePage() {
           <h2 className="text-2xl font-bold md:text-3xl">Our Approach</h2>
           <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-4">
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <div className="flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <span className="text-2xl font-bold">1</span>
               </div>
               <h3 className="mt-4 text-lg font-medium">Initial Assessment</h3>
@@ -259,7 +259,7 @@ export default function AdvicePage() {
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <div className="flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <span className="text-2xl font-bold">2</span>
               </div>
               <h3 className="mt-4 text-lg font-medium">Strategy Development</h3>
@@ -269,7 +269,7 @@ export default function AdvicePage() {
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <div className="flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <span className="text-2xl font-bold">3</span>
               </div>
               <h3 className="mt-4 text-lg font-medium">Implementation</h3>
@@ -279,7 +279,7 @@ export default function AdvicePage() {
               </p>
             </div>
             <div className="flex flex-col items-center text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <div className="flex size-16 items-center justify-center rounded-full bg-primary text-primary-foreground">
                 <span className="text-2xl font-bold">4</span>
               </div>
               <h3 className="mt-4 text-lg font-medium">Ongoing Support</h3>

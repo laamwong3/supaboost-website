@@ -31,7 +31,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Phone className="mr-2 h-5 w-5" />
+                <Phone className="mr-2 size-5" />
                 Phone
               </CardTitle>
               <CardDescription>Speak to our team directly</CardDescription>
@@ -47,7 +47,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <Mail className="mr-2 h-5 w-5" />
+                <Mail className="mr-2 size-5" />
                 Email
               </CardTitle>
               <CardDescription>Send us a message anytime</CardDescription>
@@ -63,7 +63,7 @@ export default function ContactPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <MapPin className="mr-2 h-5 w-5" />
+                <MapPin className="mr-2 size-5" />
                 Visit Us
               </CardTitle>
               <CardDescription>Our office locations</CardDescription>

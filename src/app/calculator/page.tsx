@@ -30,7 +30,7 @@ export default function CalculatorPage() {
           <div className="mt-8 flex justify-center">
             <a
               href="/contact"
-              className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-8 text-base text-sm font-medium text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-md active:translate-y-0.5"
+              className="inline-flex h-12 items-center justify-center gap-2 whitespace-nowrap rounded-md bg-primary px-8 text-base font-medium text-primary-foreground shadow transition-all hover:bg-primary/90 hover:shadow-md active:translate-y-0.5"
             >
               Book a Consultation
             </a>

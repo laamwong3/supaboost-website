@@ -43,11 +43,11 @@ export function Hero() {
           <div className="relative flex items-center justify-center lg:justify-end">
             <div className="relative h-64 w-full overflow-hidden rounded-2xl shadow-xl sm:h-80 lg:h-96">
               <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary/5 to-accent/10">
-                <div className="flex h-full w-full items-center justify-center p-8">
-                  <div className="relative mx-auto h-40 w-40">
+                <div className="flex size-full items-center justify-center p-8">
+                  <div className="relative mx-auto size-40">
                     <svg
                       viewBox="0 0 100 100"
-                      className="h-full w-full animate-pulse"
+                      className="size-full animate-pulse"
                     >
                       <circle
                         cx="50"
@@ -84,9 +84,9 @@ export function Hero() {
       </Container>
 
       {/* Background decoration elements */}
-      <div className="absolute bottom-0 left-0 h-32 w-32 rounded-full bg-accent/10 blur-3xl"></div>
-      <div className="absolute right-10 top-20 h-24 w-24 rounded-full bg-chart-2/10 blur-3xl"></div>
-      <div className="absolute left-1/3 top-0 h-40 w-40 rounded-full bg-primary/10 blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 size-32 rounded-full bg-accent/10 blur-3xl"></div>
+      <div className="absolute right-10 top-20 size-24 rounded-full bg-chart-2/10 blur-3xl"></div>
+      <div className="absolute left-1/3 top-0 size-40 rounded-full bg-primary/10 blur-3xl"></div>
     </div>
   );
 }

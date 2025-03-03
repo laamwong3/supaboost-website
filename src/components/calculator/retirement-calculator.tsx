@@ -150,7 +150,7 @@ export function RetirementCalculator() {
     <Card className="mx-auto w-full max-w-4xl">
       <CardHeader className="bg-muted/30">
         <div className="flex items-center gap-2">
-          <Calculator className="h-6 w-6 text-primary" />
+          <Calculator className="size-6 text-primary" />
           <CardTitle>Retirement Calculator</CardTitle>
         </div>
         <CardDescription className="text-base">
@@ -322,7 +322,7 @@ export function RetirementCalculator() {
                   )?.click()
                 }
               >
-                <TrendingUp className="mr-2 h-4 w-4" />
+                <TrendingUp className="mr-2 size-4" />
                 Calculate Projection
               </Button>
             </div>
@@ -449,14 +449,14 @@ export function RetirementCalculator() {
               <Card className="mb-6 bg-muted/30">
                 <CardHeader className="pb-2">
                   <CardTitle className="flex items-center text-lg">
-                    <CreditCard className="mr-2 h-5 w-5 text-primary" />
+                    <CreditCard className="mr-2 size-5 text-primary" />
                     How to Close Your Retirement Gap
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
                     <li className="flex gap-2">
-                      <TrendingUp className="h-5 w-5 flex-shrink-0 text-chart-1" />
+                      <TrendingUp className="size-5 shrink-0 text-chart-1" />
                       <span>
                         Increase your personal contribution by{" "}
                         {Math.ceil(retirementGap / (currentSalary * 0.01))}% to
@@ -464,14 +464,14 @@ export function RetirementCalculator() {
                       </span>
                     </li>
                     <li className="flex gap-2">
-                      <HelpCircle className="h-5 w-5 flex-shrink-0 text-primary" />
+                      <HelpCircle className="size-5 shrink-0 text-primary" />
                       <span>
                         Consider delaying retirement by a few years to increase
                         your super balance.
                       </span>
                     </li>
                     <li className="flex gap-2">
-                      <Calculator className="h-5 w-5 flex-shrink-0 text-chart-2" />
+                      <Calculator className="size-5 shrink-0 text-chart-2" />
                       <span>
                         Book a consultation with our superannuation experts for
                         personalized advice.

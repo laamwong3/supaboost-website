@@ -9,21 +9,21 @@ export function AboutSection() {
       title: "Expert Analysis",
       description:
         "Our team of superannuation specialists provide expert insights and analysis.",
-      icon: <TrendingUp className="h-12 w-12 text-chart-1" />,
+      icon: <TrendingUp className="size-12 text-chart-1" />,
       bgColor: "bg-chart-1/10", // Changed from gradient to simple bg color
     },
     {
       title: "Fund Comparison",
       description:
         "Compare superannuation funds side by side with our powerful tools.",
-      icon: <Users className="h-12 w-12 text-primary" />,
+      icon: <Users className="size-12 text-primary" />,
       bgColor: "bg-primary/10",
     },
     {
       title: "Security & Trust",
       description:
         "Your data is secure, and our advice is independent and transparent.",
-      icon: <Shield className="h-12 w-12 text-chart-2" />,
+      icon: <Shield className="size-12 text-chart-2" />,
       bgColor: "bg-chart-2/10",
     },
   ];
@@ -70,7 +70,7 @@ export function AboutSection() {
         <Button variant="gradient" size="lg" asChild>
           <Link href="/about" className="group">
             Learn More About Us
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </Button>
       </div>
