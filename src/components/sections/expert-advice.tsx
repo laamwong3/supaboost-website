@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, Award, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Award, Calculator, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
 
 export function ExpertAdvice() {
@@ -51,11 +51,17 @@ export function ExpertAdvice() {
             informed decisions about your retirement savings.
           </p>
         </div>
-        <div className="flex items-end">
+        <div className="flex items-end space-x-4">
           <Button asChild>
             <Link href="/advice" className="group">
               Book a Consultation
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/calculator" className="group">
+              <Calculator className="mr-2 h-4 w-4" />
+              Retirement Calculator
             </Link>
           </Button>
         </div>
@@ -94,6 +100,25 @@ export function ExpertAdvice() {
             </CardFooter>
           </Card>
         ))}
+      </div>
+
+      {/* New Calculator CTA Card */}
+      <div className="mt-12 rounded-lg bg-gradient-to-br from-primary/10 to-chart-1/10 p-8 text-center">
+        <div className="mx-auto max-w-2xl">
+          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white/80 shadow-sm">
+            <Calculator className="h-8 w-8 text-primary" />
+          </div>
+          <h3 className="text-2xl font-bold">Plan Your Retirement</h3>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Use our interactive retirement calculator to estimate your future
+            superannuation balance and plan for a secure financial future.
+          </p>
+          <div className="mt-6">
+            <Button size="lg" variant="gradient" asChild>
+              <Link href="/calculator">Try Our Retirement Calculator</Link>
+            </Button>
+          </div>
+        </div>
       </div>
 
       <div className="mt-12 rounded-lg bg-muted/30 p-6 md:p-8">

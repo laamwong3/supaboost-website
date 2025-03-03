@@ -12,6 +12,7 @@ const navItems = [
   { name: "About", href: "/about" },
   { name: "Fund Comparison", href: "/comparison" },
   { name: "Advice", href: "/advice" },
+  { name: "Calculator", href: "/calculator" }, // Added calculator to nav
   { name: "Contact", href: "/contact" },
 ];
 
