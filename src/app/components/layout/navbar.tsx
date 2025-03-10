@@ -1,5 +1,6 @@
 "use client";
 
+import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -14,10 +15,10 @@ import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const navigationItems = [
-  { name: "Home", href: "/" },
-  { name: "About Us", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Blog", href: "/blog" },
+  { name: "Home", href: "/", ariaLabel: "Go to home page" },
+  { name: "About Us", href: "/about", ariaLabel: "Learn about Supaboost" },
+  { name: "Services", href: "/services", ariaLabel: "View our services" },
+  { name: "Blog", href: "/blog", ariaLabel: "Read our latest articles" },
 ];
 
 export default function Navbar() {
@@ -40,20 +41,40 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }, [pathname]);
 
+  // Handle Escape key press to close menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [mobileMenuOpen]);
+
+  // Toggle body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  }, [mobileMenuOpen]);
+
   // Add a class based on scroll position
   const navbarClass = scrolled
-    ? "bg-white shadow-md transition-shadow duration-300"
-    : "bg-white";
+    ? "bg-background shadow-md transition-all duration-300"
+    : "bg-background";
 
   return (
     <>
       {/* Fixed navbar */}
-      <nav className={`fixed inset-x-0 top-0 z-50 ${navbarClass}`}>
-        {/* Skip to content link for accessibility */}
-        <a href="#main-content" className="skip-to-content">
-          Skip to content
-        </a>
-
+      <nav
+        className={`fixed inset-x-0 top-0 z-50 ${navbarClass}`}
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-16 justify-between">
             <div className="flex items-center">
@@ -84,6 +105,7 @@ export default function Navbar() {
                                 : "",
                             })}
                             aria-current={isActive ? "page" : undefined}
+                            aria-label={item.ariaLabel}
                           >
                             {item.name}
                           </NavigationMenuLink>
@@ -93,20 +115,25 @@ export default function Navbar() {
                   })}
                 </NavigationMenuList>
               </NavigationMenu>
+
+              <ThemeToggle />
+
               <Button size="sm" className="ml-4">
-                Contact Us
+                <Link href="#contact">Contact Us</Link>
               </Button>
             </div>
 
             {/* Mobile menu button */}
-            <div className="flex items-center md:hidden">
+            <div className="flex items-center space-x-2 md:hidden">
+              <ThemeToggle />
+
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
-                aria-label="Toggle mobile menu"
+                aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
               >
                 {mobileMenuOpen ? (
                   <X className="size-6" aria-hidden="true" />
@@ -118,13 +145,17 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile menu with improved transitions */}
         <div
           id="mobile-menu"
-          className={`md:hidden ${mobileMenuOpen ? "block" : "hidden"}`}
+          className={`absolute inset-x-0 top-16 bg-background shadow-lg transition-all duration-300 ease-in-out md:hidden${
+            mobileMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "pointer-events-none -translate-y-full opacity-0"
+          }`}
           aria-hidden={!mobileMenuOpen}
         >
-          <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+          <div className="space-y-1 px-4 py-3 sm:px-5">
             {navigationItems.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -134,17 +165,20 @@ export default function Navbar() {
                   className={`block rounded-md px-3 py-2 text-base font-medium ${
                     isActive
                       ? "bg-secondary text-primary"
-                      : "text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      : "text-foreground hover:bg-accent hover:text-accent-foreground"
                   }`}
                   aria-current={isActive ? "page" : undefined}
+                  aria-label={item.ariaLabel}
                 >
                   {item.name}
                 </Link>
               );
             })}
-            <div className="pt-2">
-              <Button size="sm" className="w-full">
-                Contact Us
+            <div className="pt-3">
+              <Button size="sm" className="w-full justify-center">
+                <Link href="#contact" className="w-full text-center">
+                  Contact Us
+                </Link>
               </Button>
             </div>
           </div>
@@ -152,7 +186,7 @@ export default function Navbar() {
       </nav>
 
       {/* Spacer to prevent content from hiding behind fixed navbar */}
-      <div className="h-16"></div>
+      <div className="h-16" aria-hidden="true"></div>
     </>
   );
 }

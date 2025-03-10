@@ -1,15 +1,24 @@
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
+import { ArrowRight, Check } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 export default function Hero() {
   return (
-    <section id="main-content" className="relative overflow-hidden bg-white">
+    <section
+      id="main-content"
+      className="relative overflow-hidden bg-white pt-16 md:pt-20 lg:pt-24"
+      aria-labelledby="hero-heading"
+    >
       <div className="mx-auto max-w-7xl">
-        <div className="relative z-10 px-4 py-16 sm:px-6 md:py-24 lg:px-8 lg:py-32">
+        <div className="relative z-10 px-4 py-12 sm:px-6 md:py-20 lg:px-8 lg:py-28">
           <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
-            <div>
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+            <div className="flex flex-col">
+              <h1
+                id="hero-heading"
+                className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl"
+              >
                 <span className="block">Expert Superannuation</span>
                 <span className="block text-primary">
                   Advice for Australians
@@ -21,82 +30,28 @@ export default function Hero() {
                 guide you through every step of your super journey.
               </p>
 
-              {/* Feature highlights */}
+              {/* Feature highlights with improved accessibility */}
               <div className="mt-8 space-y-4">
-                <div className="flex items-start space-x-3">
-                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M10 3L4.5 8.5L2 6"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
+                {[
+                  "Personalized strategies for your financial goals",
+                  "Expert advisors with deep market knowledge",
+                  "Focused exclusively on Australian superannuation",
+                ].map((feature, i) => (
+                  <div key={i} className="flex items-start space-x-3">
+                    <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                      <Check size={14} aria-hidden="true" />
+                    </div>
+                    <p className="text-sm text-gray-600">{feature}</p>
                   </div>
-                  <p className="text-sm text-gray-600">
-                    Personalized strategies for your financial goals
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M10 3L4.5 8.5L2 6"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Expert advisors with deep market knowledge
-                  </p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="flex size-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 12 12"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M10 3L4.5 8.5L2 6"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-gray-600">
-                    Focused exclusively on Australian superannuation
-                  </p>
-                </div>
+                ))}
               </div>
 
               <div className="mt-10 flex flex-col gap-4 sm:flex-row">
                 <Button size="lg" asChild>
-                  <Link href="/services">Explore Our Services</Link>
+                  <Link href="/services" className="group">
+                    Explore Our Services
+                    <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+                  </Link>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <Link href="/about">Learn More About Us</Link>
@@ -105,20 +60,30 @@ export default function Hero() {
             </div>
 
             <div className="relative h-64 sm:h-80 lg:h-full">
-              {/* This would be replaced with an actual image in production */}
-              <div className="relative size-full overflow-hidden rounded-lg bg-gradient-to-br from-primary/20 to-primary/5">
-                <div className="absolute inset-0 flex items-center justify-center text-lg font-semibold text-primary/30">
-                  Financial Planning Image
-                </div>
-
-                {/* Decorative elements */}
-                <div className="absolute -bottom-6 -right-6 size-32 rounded-full bg-primary/10"></div>
-                <div className="absolute -left-6 top-10 size-16 rounded-full bg-primary/5"></div>
-              </div>
+              <OptimizedImage
+                src="/images/financial-planning.jpg"
+                alt="Financial planning services showing advisor with client"
+                width={600}
+                height={450}
+                priority
+                className="rounded-lg shadow-lg"
+                aspectRatio="video"
+                fallbackSrc="/images/placeholder-financial.jpg"
+              />
             </div>
           </div>
         </div>
       </div>
+
+      {/* Decorative background elements */}
+      <div
+        className="absolute -right-24 -top-24 hidden size-96 rounded-full bg-primary/5 lg:block"
+        aria-hidden="true"
+      ></div>
+      <div
+        className="absolute -bottom-12 -left-12 hidden size-64 rounded-full bg-primary/5 lg:block"
+        aria-hidden="true"
+      ></div>
     </section>
   );
 }

@@ -51,7 +51,7 @@
   .dark {
     --background: 222 47% 11%;
     --foreground: 210 40% 98%;
-    --card: 222 47% 11%;
+    --card: 215 25% 15%;
     --card-foreground: 210 40% 98%;
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
@@ -100,12 +100,12 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300;
   }
 
   /* Improved focus states for accessibility */
   :focus-visible {
-    @apply outline-none ring-2 ring-primary ring-offset-2;
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-background;
   }
 
   /* Typography styling */
@@ -116,7 +116,7 @@
   h5,
   h6 {
     font-family: var(--font-poppins);
-    @apply font-semibold tracking-tight;
+    @apply font-semibold tracking-tight text-foreground;
   }
 
   h1 {
@@ -132,19 +132,37 @@
   }
 
   p {
-    @apply leading-relaxed;
+    @apply leading-relaxed text-foreground/90;
   }
 
   /* Skip to content link for keyboard users */
   .skip-to-content {
     @apply sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground;
   }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    @apply h-2 w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply rounded-full bg-secondary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-primary/40 transition-colors hover:bg-primary/60;
+  }
+
+  /* Selection styling */
+  ::selection {
+    @apply bg-primary/20 text-foreground;
+  }
 }
 
 @layer components {
   /* Brand components */
   .brand-card {
-    @apply rounded-xl border bg-card text-card-foreground;
+    @apply rounded-xl border bg-card text-card-foreground transition-all duration-200;
     box-shadow: var(--card-shadow);
   }
 
@@ -162,13 +180,27 @@
     @apply py-12 md:py-16 lg:py-24;
   }
 
-  /* Styled buttons with consistent padding */
-  .btn-primary {
-    @apply inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  /* Animated image card */
+  .image-card {
+    @apply overflow-hidden rounded-lg bg-muted transition-all duration-300 hover:shadow-lg;
   }
 
-  .btn-secondary {
-    @apply inline-flex h-10 items-center justify-center rounded-md bg-secondary px-4 py-2 text-sm font-medium text-secondary-foreground shadow-sm transition-colors hover:bg-secondary/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  .image-card img {
+    @apply transition-transform duration-500 hover:scale-105;
+  }
+
+  /* Feature card hover effect */
+  .feature-card {
+    @apply rounded-lg border bg-card p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md;
+  }
+
+  /* Testimonial card styles */
+  .testimonial-card {
+    @apply rounded-lg border border-border bg-card p-6 shadow-sm transition-all duration-300;
+  }
+
+  .testimonial-card:hover {
+    @apply shadow-md;
   }
 }
 
@@ -179,10 +211,14 @@
   }
 
   .animate-slide-up {
-    @apply translate-y-4 transform opacity-0 transition-transform duration-300;
+    @apply translate-y-4 transform opacity-0 transition-all duration-300;
   }
 
   .animate-slide-up.in-view {
     @apply translate-y-0 opacity-100;
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
